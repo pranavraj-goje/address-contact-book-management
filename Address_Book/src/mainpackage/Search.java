@@ -16,11 +16,11 @@ import java.util.Scanner;
 
 public class Search {
 	public static void choose_field() throws FileNotFoundException, IOException {
-		 Scanner input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		int exit = 0;
 		int answer = -1;
-		//we will loop until user wants to exit the application
-		while(answer != exit){
+		// we will loop until user wants to exit the application
+		while (answer != exit) {
 
 			System.out.println("Do you want to search beased on name or based on phone?");
 			System.out.println("Give '1' or '2' or anser '0' to return to main menu.");
@@ -30,8 +30,7 @@ public class Search {
 				answer = 0;
 			}
 
-
-			if(answer == 1)//according to user's input i go to the correct method
+			if (answer == 1)// according to user's input i go to the correct method
 				name_search();
 			else if (answer == 2)
 				number_search();
