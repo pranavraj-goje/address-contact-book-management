@@ -1,13 +1,13 @@
-package mainpackage;
+package Address_Book.mainpackage;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-import mainpackage.Print;
-import mainpackage.Add;
-import mainpackage.Search;
-import mainpackage.Change;
-import mainpackage.Delete;
+import Address_Book.mainpackage.Print;
+import Address_Book.mainpackage.Add;
+import Address_Book.mainpackage.Search;
+import Address_Book.mainpackage.Change;
+import Address_Book.mainpackage.Delete;
 
 import java.io.*;
 import java.net.*;
@@ -15,13 +15,16 @@ import java.util.*;
 import java.nio.charset.Charset;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 
 		Scanner input = new Scanner(System.in);
 		int exit = 0;
 		int answer;
 		// we will loop until user wants to exit the application
 		do {
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+			
 			System.out.println("--------Welcome to Address Book---------");
 			System.out.println("Enter '1' to Add contact");
 			System.out.println("Enter '2' to Search contact");
@@ -35,11 +38,10 @@ public class Main {
 			try {// we handle the input of the user
 				answer = input.nextInt();
 			} catch (NumberFormatException e) {
-				// e.printStackTrace();
 				answer = -1;
 			}
+			
 			if (answer == 1)// according to user's input we go to each class
-
 				Add.add_contact();
 			else if (answer == 2)
 				Search.choose_field();
